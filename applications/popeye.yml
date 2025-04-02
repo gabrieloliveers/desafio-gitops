@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: popeye
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/moskitcrm/moskit-gitops.git'
+    targetRevision: main
+    path: 'desafio-gitops/manifests/popeye'
+  destination:
+    namespace: popeye
+    server: 'https://kubernetes.default.svc'
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+      - CreateNamespace=true

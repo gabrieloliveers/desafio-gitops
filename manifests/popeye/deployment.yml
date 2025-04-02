@@ -1,0 +1,18 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: popeye
+  namespace: popeye
+spec:
+  schedule: "*/30 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccountName: popeye
+          restartPolicy: Never
+          containers:
+            - name: popeye
+              image: derailed/popeye:v0.19.1
+              command: ["/bin/sh", "-c"]
+              args: ["popeye --save --output-standard"]
