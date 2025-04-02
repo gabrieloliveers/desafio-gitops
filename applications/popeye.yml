@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/moskitcrm/moskit-gitops.git'
+    repoURL: 'https://github.com/gabrieloliveers/desafio-gitops.git'
     targetRevision: main
     path: 'desafio-gitops/manifests/popeye'
   destination:
