@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: 'https://github.com/gabrieloliveers/desafio-gitops'
     targetRevision: main
-    path: 'desafio-gitops/manifests/popeye'
+    path: 'manifests/popeye'
   destination:
     namespace: popeye
     server: 'https://kubernetes.default.svc'
